@@ -1,0 +1,22 @@
+{
+  "name": "node2",
+  "version": "1.0.0",
+  "description": "node ",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/zhuhuijun/node2.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "zhuhj",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zhuhuijun/node2/issues"
+  },
+  "homepage": "https://github.com/zhuhuijun/node2#readme"
+}
