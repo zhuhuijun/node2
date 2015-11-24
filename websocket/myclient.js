@@ -40,7 +40,7 @@ function WebSocket(address) {//  ws://localhost:8080
     };
     var req = http.request(reqoptions);
     req.on('upgrade', function (res, socket, upgradehead) {
-        console.log(res.headers);
+        //console.log(res.headers);
         self.socket = socket;
         //校验服务器的返回是否合法
         var serverkey = res.headers['sec-websocket-accept'];
@@ -67,7 +67,7 @@ var ws = new WebSocket('ws://localhost:8080');
  */
 ws.on('open', function () {
     console.log('opened');
-    ws.send(new Buffer('dddd'));
+    ws.send(new Buffer('>>>>:你好服务器....'));
 });
 
 /***
