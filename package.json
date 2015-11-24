@@ -18,5 +18,11 @@
   "bugs": {
     "url": "https://github.com/zhuhuijun/node2/issues"
   },
-  "homepage": "https://github.com/zhuhuijun/node2#readme"
+  "homepage": "https://github.com/zhuhuijun/node2#readme",
+  "dependencies": {
+    "express": "^4.13.3",
+    "forwarded": "^0.1.0",
+    "http-proxy": "^1.12.0",
+    "serve-static": "^1.10.0"
+  }
 }
