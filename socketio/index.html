@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>多人聊天室</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        .container {
+            margin-top: 20px;
+        }
+
+        .user {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="panel panel-success">
+        <div class="panel-heading">欢迎进入聊天室</div>
+        <div class="panel-body">
+            <ul class="list-group" id="messages">
+
+            </ul>
+        </div>
+        <div class="panel-footer">
+            <div class="row">
+                <div class="col-xs-9 col-sm-9">
+                    <input type="text" id="txtMsg" class="form-control"/>
+                </div>
+                <div class="col-xs-3 col-sm-3">
+                    <button id="btnSend" type="button" class="btn btn-primary ">发言</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="js/myutils.js"></script>
+<script type="text/javascript">
+    /*******************************************************************************///方法的调用
+    var socket = io.connect({
+        port: 3000,
+        host: 'localhost'
+    });
+    socket.on('connect', function () {
+        Utils.addMsg({user: 'Client', content: '>>>>:success connected'});
+        //socket.send('message', 'connect success');
+    });
+
+    socket.on('disconnect', function () {
+        Utils.addMsg({user: 'Client', content: '>>>>:success disconnected'});
+    });
+    socket.on('message', function (data) {
+        Utils.addMsg(data);
+    });
+    //发言的按钮
+    $("#btnSend").click(function () {
+        Utils.sendMsg(socket);
+    });
+    //按下事件
+    $('#txtMsg').keypress(function (e) {
+        var c = e.charCode || e.keyCode || e.which;
+        if (c == 13) {
+            Utils.sendMsg(socket);
+        }
+    });
+    /***
+     * 未来的元素绑定对象
+     */
+    $('body').delegate('.user', 'click', function () {
+        $("#txtMsg").val('@' + $(this).text() + ' ');
+    });
+</script>
