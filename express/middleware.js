@@ -15,9 +15,19 @@ app.use(function (req, res, next) {
     };
     next();
 });
+/***
+ * 拦截所有的请求
+ */
+/*app.all('*', function (req, res) {
+ res.send('404');
+ });*/
+app.get('/us/:username', function (req, res) {
 
-
-
+    console.log(req.query.name);
+    //路径参数
+    console.log(req.params.username);
+    res.send({content:'关于我们'});
+});
 app.get('/', function (req, res) {
     res.end('hello world');
 });
@@ -54,6 +64,7 @@ app.get('/water', function (req, res, next) {
     next();
 
 });
+
 /******************///统一的日志记录
 app.use(function (req, res, next) {
     console.log(req.method, req.url, res.statusCode, res.getHeader('Content-Length'));

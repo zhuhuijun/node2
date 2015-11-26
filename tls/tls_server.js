@@ -14,9 +14,10 @@ var tls = require('tls');
 var fs = require('fs');
 // genrsa -out ./ca/ca.key 1024
 var options = {
-    requestCert: true,
+
     key: fs.readFileSync('./server/server.key'),//服务器的私钥
     cert: fs.readFileSync('./server/server.crt'),//服务器的证书
+    requestCert: false,
     ca: fs.readFileSync('./ca/ca.crt')//证书的合法办法结构
 };
 var server = tls.createServer(options, function (socket) {
