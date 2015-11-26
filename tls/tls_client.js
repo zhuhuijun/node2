@@ -10,13 +10,27 @@
 var tls = require('tls');
 var fs = require('fs');
 var options = {
-    requestCert: true,
-    key: fs.readFileSync('./server/server.key'),//服务器的私钥
-    cert: fs.readFileSync('./server/server.crt'),//服务器的证书
+    rejectUnauthorized: true,
+    key: fs.readFileSync('./client/client.key'),//客户端的私钥
+    cert: fs.readFileSync('./client/client.crt'),//客户端的证书
     ca: fs.readFileSync('./ca/ca.crt')//证书的合法办法结构
 };
-var server = tls.createServer(options, function (socket) {
-    socket.write('hello');
-    socket.setEncoding('utf8');
-    socket.pipe(socket);
+
+var client = tls.connect(8080, 'localhost', options, function () {
+    console.log('connected');
+    client.write('hello');
 });
+/**
+ * 监听事件
+ */
+client.on('data', function (data) {
+    console.log(client);
+});
+client.on('end', function () {
+    client.close();
+});
+
+client.on('error', function (err) {
+    console.log(err);
+});
+
