@@ -3,16 +3,16 @@
 <head>
     <title>jsCallAndApply</title>
     <script type="text/javascript">
-        var someuser = {
-            name: 'byvoid',
-            display: function (words) {
-                console.info(this.name + ' says:' + words);
-            }
-        };
-        var foo={
-            name:'zhuhj'
-        };
-        someuser.display.call(foo,'helllo');
+    var someuser = {
+        name: 'byvoid',
+        display: function (words) {
+            console.info(this.name + ' says:' + words);
+        }
+    };
+    var foo={
+        name:'zhuhj'
+    };
+    someuser.display.call(foo,'helllo');
     </script>
 </head>
 <body>

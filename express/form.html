@@ -5,8 +5,10 @@
     <title></title>
 </head>
 <body>
-<form action="/user/add" method="post">
-    <input type="text" name="username"/>
+<form action="/users/add" method="post" enctype="multipart/form-data">
+    ID:<input type="text" name="uid" value="<%=user.uid%>"/>
+    Name:<input type="text" name="username" value="<%=user.username%>"/>
+    Avator:<input type="file" name="avator">
     <button type="submit">提交</button>
 </form>
 </body>
