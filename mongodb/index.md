@@ -7,3 +7,5 @@
 # 存储的方式 Bson Binary json
 * 1二进制文件和图片
 * function() mongodb的基本单元是文档，键值对的集合
+* 服务器>数据库>集合>文档
+* 序列化的josn
