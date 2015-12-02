@@ -9,3 +9,5 @@
 * function() mongodb的基本单元是文档，键值对的集合
 * 服务器>数据库>集合>文档
 * 序列化的josn
+
+# mongoose
